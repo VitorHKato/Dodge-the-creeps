@@ -3,8 +3,10 @@ extends Node
 @export var mob_scene: PackedScene
 var score
 
+
 func _ready():
 	pass
+
 
 func game_over() -> void:
 	$ScoreTimer.stop()
@@ -38,6 +40,7 @@ func _on_score_timer_timeout() -> void:
 	score += 1
 
 	$HUD.update_score(score)
+
 
 func _on_mob_timer_timeout() -> void:
 	var mob = mob_scene.instantiate()		#Create a new instance of the Mob scene

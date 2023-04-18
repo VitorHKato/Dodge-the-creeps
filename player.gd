@@ -5,6 +5,7 @@ signal hit		#Cria um sinal
 @export var speed = 400
 var screen_size 
 
+
 func _ready():
 	screen_size = get_viewport_rect().size
 
@@ -43,6 +44,7 @@ func _on_body_entered(body: Node2D) -> void:
 	hide()		#Player disappears after being hit.
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)	#Disable player's collision shape when it's safe.
+	
 	
 #Restart the player
 func start(pos):
